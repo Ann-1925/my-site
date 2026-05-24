@@ -340,16 +340,16 @@ footer {
         overflow: hidden;
     }
 
-    .forma {
-        height: 720px;
-        overflow: hidden;
-    }
-    
     .card2 {
         height: 650px;
         overflow: hidden;
     }
 
+    .forma {
+        height: 720px;
+        overflow: hidden;
+    }
+    
     .checkbox {
         overflow-wrap: normal;
     }
