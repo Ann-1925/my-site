@@ -339,14 +339,14 @@ footer {
     .card1 {
         overflow: hidden;
     }
+
+    .forma {
+        height: 750px;
+        overflow: hidden;
+    }
     
     .card2 {
         height: 650px;
-        overflow: hidden;
-    }
-
-    .forma {
-        height: 720px;
         overflow: hidden;
     }
 
