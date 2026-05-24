@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Галерея - Простые рецепты напитков</title>
+    <link rel="stylesheet" href="gallery.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header class="gallery-header">
+        <div class="header-content">
+            <h1>Популярные рецепты</h1>
+            <p class="subtitle">Коллекция изображений по теме: <span class="theme-name">Категории напитков</span></p>
+        </div>
+        
+        <nav class="main-nav">
+            <ul class="nav-grid flex-nav">
+                <li><a href="index.html" class="nav-link">Главная</a></li>
+                <li><a href="gallery.html" class="nav-link active">Популярные</a></li>
+                <li><a href="contacts.html" class="nav-link">Контакты</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="gallery-container">
+        <div class="controls-panel">
+            <div class="stats">
+                <span class="stat-item">
+                    <i class="fas fa-image"></i>
+                    Изображений: <span id="image-counter">0</span>
+                </span>
+                <span class="stat-item">
+                    <i class="fas fa-heart"></i>
+                    Всего лайков: <span id="total-likes">0</span>
+                </span>
+            </div>
+            
+            <div class="view-controls">
+                <button id="grid-view" class="view-btn active">
+                    <i class="fas fa-th"></i> Сетка
+                </button>
+                <button id="list-view" class="view-btn">
+                    <i class="fas fa-list"></i> Список
+                </button>
+            </div>
+        </div>
+        
+        <div class="filters">
+            <h3><i class="fas fa-filter"></i> Фильтры:</h3>
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">Все</button>
+                <button class="filter-btn" data-filter="nature">Кофе</button>
+                <button class="filter-btn" data-filter="city">Какао</button>
+                <button class="filter-btn" data-filter="people">Чай</button>
+                 <button class="filter-btn" data-filter="people">Коктейль</button>
+                <button class="filter-btn" data-filter="people">С молоком</button>
+                <button class="filter-btn" data-filter="people">Газированное</button>
+            </div>
+        </div>
+        
+        <!-- ГАЛЕРЕЯ С ИСПОЛЬЗОВАНИЕМ CSS GRID -->
+        <div class="gallery-grid" id="image-gallery">
+            <!-- Карточка 1 -->
+            <article class="image-card" data-category="nature">
+                <div class="card-image">
+                    <img src="assets/images/Какао.jpg" 
+                        alt="Картинка с кружкой какао"
+                        class="gallery-img"
+                        loading="lazy">
+                    <div class="image-overlay">
+                        <button class="like-btn" data-id="1">
+                            <i class="far fa-heart"></i>
+                            <span class="like-count">0</span>
+                        </button>
+                        <button class="zoom-btn">
+                        <i class="fas fa-expand"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <h3 class="image-title">Какао на молоке</h3>
+                    <p class="image-date"><i class="far fa-calendar"></i> 31 января 2026</p>
+                        <p class="image-description">Знакомый с детства вкус домашнего какао не сравнить с современными растворимыми, которые можно купить в кофейнях. Какао получается с насыщенным шоколадным вкусом.</p>
+                    <div class="image-tags">
+                        <span class="tag">Кофе</span>
+                        <span class="tag">С молоком</span>
+                    </div>
+                </div>
+            </article>
+    
+            <!-- Карточка 2 -->
+            <article class="image-card" data-category="city">
+                <div class="card-image">
+                    <img src="assets/images/Коктейль1.jpg" 
+                        alt="Картинка со стаканом коктейля с абрикосом и базиликом"
+                        class="gallery-img"
+                        loading="lazy">
+                    <div class="image-overlay">
+                        <button class="like-btn" data-id="2">
+                            <i class="far fa-heart"></i>
+                            <span class="like-count">0</span>
+                        </button>
+                        <button class="zoom-btn">
+                            <i class="fas fa-expand"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <h3 class="image-title">Коктейль с абрикосом и базиликом</h3>
+                    <p class="image-date"><i class="far fa-calendar"></i> 31 января 2026</p>
+                        <p class="image-description">Это газированный абрикосовый коктейль, который идеально подходит в качестве лёгкого аперитива, освежающего напитка в жаркий день или для пикника.</p>
+                    <div class="image-tags">
+                        <span class="tag">Коктейль</span>
+                        <span class="tag">Газированное</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Карточка 3 -->
+            <article class="image-card" data-category="city">
+                <div class="card-image">
+                    <img src="assets/images/Кофе1.jpg" 
+                        alt="Картинка с кружками кофе"
+                        class="gallery-img"
+                        loading="lazy">
+                    <div class="image-overlay">
+                        <button class="like-btn" data-id="2">
+                            <i class="far fa-heart"></i>
+                            <span class="like-count">0</span>
+                        </button>
+                        <button class="zoom-btn">
+                            <i class="fas fa-expand"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <h3 class="image-title">Ванильный латте</h3>
+                    <p class="image-date"><i class="far fa-calendar"></i> 31 января 2026</p>
+                        <p class="image-description">Невероятно сливочный кофейный напиток, в котором эспрессо соединяется с большим количеством взбитого молока и ароматом ванили.</p>
+                    <div class="image-tags">
+                        <span class="tag">Кофе</span>
+                        <span class="tag">С молоком</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Карточка 4 -->
+            <article class="image-card" data-category="city">
+                <div class="card-image">
+                    <img src="assets/images/Коктейль2.jpeg" 
+                        alt="Картинка с бокалами коктейля 'Пина колада'"
+                        class="gallery-img"
+                        loading="lazy">
+                    <div class="image-overlay">
+                        <button class="like-btn" data-id="2">
+                            <i class="far fa-heart"></i>
+                            <span class="like-count">0</span>
+                        </button>
+                        <button class="zoom-btn">
+                            <i class="fas fa-expand"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <h3 class="image-title">Пина колада с бананом</h3>
+                    <p class="image-date"><i class="far fa-calendar"></i> 31 января 2026</p>
+                        <p class="image-description">Этот котейль сохранил яркий тропический вкус кокоса и ананаса. Он готовится на основе соков этих фруктов, а также банана и газированной воды.</p>
+                    <div class="image-tags">
+                        <span class="tag">Коктейль</span>
+                        <span class="tag">Газированное</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Карточка 5 -->
+            <article class="image-card" data-category="city">
+                <div class="card-image">
+                    <img src="assets/images/Чай с молоком.jpg" 
+                        alt="Картинка стакана чая с молоком"
+                        class="gallery-img"
+                        loading="lazy">
+                    <div class="image-overlay">
+                        <button class="like-btn" data-id="2">
+                            <i class="far fa-heart"></i>
+                            <span class="like-count">0</span>
+                        </button>
+                        <button class="zoom-btn">
+                            <i class="fas fa-expand"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <h3 class="image-title">Чай с молоком и корицей</h3>
+                    <p class="image-date"><i class="far fa-calendar"></i> 31 января 2026</p>
+                        <p class="image-description">Прекрасный согревающий напиток, в котором аромат корицы и мягкость молока создают идеальный дуэт. Он станет отличным завершением ужина, если подавать его горячим.</p>
+                    <div class="image-tags">
+                        <span class="tag">Чай</span>
+                        <span class="tag">С молоком</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Карточка 6 -->
+            <article class="image-card" data-category="city">
+                <div class="card-image">
+                    <img src="assets/images/Чай1.jpg" 
+                        alt="Картинка с кружками фруктового чая красного оттенка"
+                        class="gallery-img"
+                        loading="lazy">
+                    <div class="image-overlay">
+                        <button class="like-btn" data-id="2">
+                            <i class="far fa-heart"></i>
+                            <span class="like-count">0</span>
+                        </button>
+                        <button class="zoom-btn">
+                            <i class="fas fa-expand"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <h3 class="image-title">Чай с апельсинами и корицей</h3>
+                    <p class="image-date"><i class="far fa-calendar"></i> 31 января 2026</p>
+                        <p class="image-description">Горячий фруктовый чай согреет не хуже простого. Благодаря ягодам, травам и апельсину в составе он получается еще более ароматным и пряным.</p>
+                    <div class="image-tags">
+                        <span class="tag">Чай</span>
+                    </div>
+                </div>
+            </article>
+        </div>
+        
+        <aside class="gallery-info">
+            <h3><i class="fas fa-lightbulb"></i> Интересный факт</h3>
+                <p>Напиток, приготовленный своими руками из свежих продуктов, намного полезнее уже готового решениями из магазина.</p>
+        </aside>
+    </main>
+
+    <footer class="gallery-footer">
+        <div class="footer-content">
+                <p>&copy; <span id="current-year">2026</span> Анна. Все права защищены.</p>
+            <p class="js-status">JavaScript загружен и работает!</p>
+        </div>
+    </footer>
+
+    <!-- ПОДКЛЮЧЕНИЕ JAVASCRIPT -->
+    <script src="script.js"></script>
+</body>
+</html>
+<link rel="stylesheet" href="style.css">

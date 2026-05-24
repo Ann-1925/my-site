@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакты</title>
+    <link rel="stylesheet" href="contacts.css">
+</head>
+<body>
+    <header class="header">
+        <h1>Контактная информация</h1>
+        <nav>
+            <ul class="flex-nav">
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="gallery.html">Популярные</a></li>
+                <li><a href="contacts.html" class="active">Контакты</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="controls-panel">
+            <article class="card1 article">
+                <h2>Информация</h2>
+                <p>Разработчик: Анна Недоспасова</p>
+                <p>email <span class="email">nedospasova.ann@yandex.ru</span></p>
+                <p>Сайт представляет собой тематическую коллекцию рецептов, специализирующуюся исключительно на напитках. Основной контент: структурированные подборки и карточки рецептов. Главный критерий отбора: простота, скорость приготовления и доступность ингредиентов.</p>
+                <p><a href="https://dl.bip.com/K1q74GSa">BiP Мессенджер</a></p>
+                <p><a href="https://t.me/Any_sdp">Telegram</a></p>
+                <p><a href="https://max.ru/u/f9LHodD0cOIJHxhwMvCeuQ8zLmRU7CbFYn8cgEeYD3m_99vS9camIWlNlqs">MAX</a></p>
+                <p>Географическое положение: ул. Академика Миллионщикова 20</p>
+            </article>
+            <article class="card2 article">
+                <h4>График работы:</h4>
+                <p>Пн-Вс: 10:00 - 22:00</p>
+                <h4>FAQ</h4>
+                <ol>
+                    <li>Как понять что форма была отправлена?</li>
+                    <li>Вам придет письмо на указанную почту.</li>
+                    <li>Что делать если выдает ошибку при отправке формы?</li>
+                    <li>Напишите нам, удобным для вас способом.</li>
+                    <li>Есть ли контакты круглосуточной поддержки?</li>
+                    <li>Нет, мы работаем по указанному графику.</li>
+                </ol>
+                <h4>Инструкция по связи:</h4>
+                <p>Заполните форму справа, указывая тему сообщения и другие требуемые данные. Нажмите на кнопку отправить. Через некоторое время вам придет письмо на указанную почту.</p>
+            </article>
+            <article class="forma article">
+                <form>
+                    <h2>Форма обратной связи</h2>
+                    <h3>Имя</h3>
+                    <input type="text" class="form_data" required>
+                    <h3>Email</h3>
+                    <input type="email" class="form_data" required>
+                    <h3>Тема</h3>
+                    <select class="form_data" required>
+                        <option value="" disabled selected>-выберите тему сообщения-</option>
+                        <option value="вопрос">вопрос</option>
+                        <option value="предложение">предложение</option>
+                        <option value="отзыв">отзыв</option>
+                    </select>
+                    <h3>Сообщение</h3>
+                    <textarea placeholder="Введите текст" class="form_data" required></textarea>
+                    <label class="consent">
+                        <input class="checkbox" type ="checkbox" required>Cогласие на обработку персональных данных</input>
+                    </label>
+                    <button class="send" type="submit">Отправить</button>
+                </form>
+            </article>
+        </section>
+    </main>
+    <footer>
+        <p>© Анна, студентка 1 курса, 2026</p>
+    </footer>
+</body>
+</html>

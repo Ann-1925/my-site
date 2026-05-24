@@ -1,0 +1,372 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: Georgia, serif;
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+main {
+    background-color: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+
+/* Основной контейнер для Grid */
+.gallery-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(135deg, #b58f71 20%, #8b5a4b 70%, #6b443b 90%);
+    color: rgb(252, 251, 249);
+    padding: 10px 10px;
+    text-align: center;
+    border-radius: 15px;
+    margin-bottom: 5px;
+}
+
+header h1 {
+    font-size: 29px;
+    margin-bottom: 5px;
+}
+
+nav {
+    padding: 20px;
+    border-radius: 15px;
+    margin-top: 10px;
+}
+
+nav ul {
+    list-style-type: none;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-right: 20px;
+    margin: 0 30px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    color: rgb(252, 251, 249);
+    padding: 5px 0;
+    border-bottom: 2px solid transparent;
+}
+
+nav ul li a:hover {
+    color: rgb(252, 251, 249);
+    border-bottom-color: rgb(252, 251, 249);
+}
+
+
+
+
+.flex-nav a {
+    display: block;
+    padding: 5px 0;
+    transition: all 0.3s ease;
+}
+
+.flex-nav a:hover {
+    transform: translateY(-3px);
+}
+
+
+.active {
+    border-bottom-color: rgb(252, 251, 249);
+}
+
+.subtitle {
+    margin-top: 1px;
+}
+
+/* Панель управления */
+.controls-panel {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 20px;
+    align-items: center;
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+    .controls-panel {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.stat-item {
+    background: white;
+    padding: 10px 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+
+}
+
+.view-controls {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.view-btn {
+    background: white;
+    border: 2px solid #e0e0e0;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.view-btn.active {
+    background: #7f5836;
+    color: white;
+    border-color: #7f5836;
+}
+
+/* ОСНОВНАЯ ГАЛЕРЕЯ С CSS GRID */
+.gallery-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    margin-bottom: 40px;
+}
+
+/* Альтернативный вид - список */
+.gallery-grid.list-view {
+    grid-template-columns: 1fr;
+    max-width: 800px;
+    margin: 0 auto 40px;
+}
+
+/* Карточка изображения */
+.image-card {
+    flex: 1 1 300px;
+    width: 100%;
+    height: 461px;
+    justify-content: center;
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.image-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+/* Изображение в карточке */
+.card-image {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+}
+
+.gallery-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.image-card:hover .gallery-img {
+    transform: scale(1.05);
+}
+
+/* Наложение с кнопками */
+.image-overlay {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 10px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.image-card:hover .image-overlay {
+    opacity: 1;
+}
+
+.like-btn, .zoom-btn {
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: grid;
+    place-items: center;
+    font-size: 16px;
+    transition: all 0.3s;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.like-btn:hover {
+    background: #e24444;
+    color: white;
+}
+
+.like-btn.liked {
+    background: #d45050;
+    color: white;
+}
+
+.like-btn.liked i {
+    font-weight: 900;
+}  
+
+.zoom-btn:hover {
+    background: #7f5836;
+    color: white;
+}
+
+.like-count {
+    margin-left: 5px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* Контент карточки */
+.card-content {
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.image-title {
+    margin: 0 0 10px 0;
+    color: #333;
+    font-size: 18px;
+    line-height: 1.3;
+}
+
+.image-date {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.image-description {
+    color: #777;
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 15px;
+    flex-grow: 1;
+}
+
+/* Теги */
+.image-tags {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(80px, auto));
+    gap: 5px;
+}
+
+.tag {
+    background: #f0f0f0;
+    color: #666;
+    padding: 4px 10px;
+    border-radius: 15px;
+    font-size: 12px;
+    text-align: center;
+}
+
+/* Блок с информацией */
+.gallery-info {
+    background: linear-gradient(135deg, #ed9294 0%, #9e6c4e 100%);
+    color: white;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+footer {
+    background-color: #6b443b;
+    color: rgb(210, 194, 171);
+    text-align: center;
+    padding: 20px;
+    border-radius: 5px;
+    font-size: 14px;
+    margin-top: 30px;
+}
+
+.js-status {
+    color: #649f72;
+    font-weight: bold;
+}
+
+/* Утилитарные классы */
+.hidden {
+    display: none !important;
+}
+
+/* Анимации */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.image-card {
+    animation: fadeIn 0.5s ease forwards;
+}
+
+/* Задержка анимации для каждой карточки */
+.image-card:nth-child(1) { animation-delay: 0.1s; }
+.image-card:nth-child(2) { animation-delay: 0.2s; }
+.image-card:nth-child(3) { animation-delay: 0.3s; }
+.image-card:nth-child(4) { animation-delay: 0.4s; }
+.image-card:nth-child(5) { animation-delay: 0.5s; }
+.image-card:nth-child(6) { animation-delay: 0.6s; }
+
+/* CSS с использованием Flexbox */
+.flex-nav {
+    display: flex;
+    justify-content: center; /* Центрируем меню */
+    gap: 30px; /* Отступы между пунктами */
+    list-style: none;
+    padding: 0;
+}
+
+
+@media (max-width: 470px) {
+    .flex-nav {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+}

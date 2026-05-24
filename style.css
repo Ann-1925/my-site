@@ -1,0 +1,131 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Georgia, serif;
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(135deg, #b58f71 20%, #8b5a4b 70%, #6b443b 90%);
+    color: rgb(255, 255, 255);
+    padding: 20px 30px;
+    text-align: center;
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    font-size: 29px;
+    margin-bottom: 5px;
+}
+
+nav {
+    padding: 20px;
+    border-radius: 15px;
+    margin-top: 10px;
+}
+
+nav ul {
+    list-style-type: none;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-right: 20px;
+    margin: 0 30px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    padding: 5px 0;
+    border-bottom: 2px solid transparent;
+}
+
+nav ul li a:hover {
+    color: rgb(252, 251, 249);
+    border-bottom-color: rgb(255, 255, 255);
+}
+
+/* CSS с использованием Flexbox */
+.flex-nav {
+    display: flex;
+    justify-content: center; /* Центрируем меню */
+    gap: 30px; /* Отступы между пунктами */
+    list-style: none;
+    padding: 0;
+}
+
+.flex-nav a {
+    display: block;
+    padding: 5px 0;
+    transition: all 0.3s ease;
+}
+
+.flex-nav a:hover {
+    transform: translateY(-3px);
+}
+
+
+.active {
+    border-bottom-color: rgb(252, 251, 249);
+}
+
+main {
+    background-color: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: #2d2321;
+    margin: 20px 0 15px 0;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #eee;
+}
+
+section ul li {
+    margin-left: 20px;
+}
+
+p {
+    margin-bottom: 15px;
+}
+
+footer {
+    background-color: #6b443b;
+    color: rgb(210, 194, 171);
+    text-align: center;
+    padding: 20px;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+@media (max-width: 768px) {
+    .controls-panel {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 470px) {
+    .flex-nav {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+

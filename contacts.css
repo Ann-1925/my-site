@@ -1,0 +1,351 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* стили для выделенного текста на странице */
+::selection {
+    background-color: #96b385;
+    color: white; 
+}
+
+body {
+    font-family: Georgia, serif;
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(135deg, #b58f71 20%, #8b5a4b 70%, #6b443b 90%);
+    color: rgb(255, 255, 255);
+    padding: 20px 30px;
+    text-align: center;
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    font-size: 29px;
+    margin-bottom: 5px;
+}
+
+nav {
+    padding: 20px;
+    border-radius: 15px;
+    margin-top: 10px;
+}
+
+nav ul {
+    list-style-type: none;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-right: 20px;
+    margin: 0 30px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    color: rgb(252, 251, 249);
+    padding: 5px 0;
+    border-bottom: 2px solid transparent;
+}
+
+/* стили для ссылок на панели управления */
+nav ul li a:hover {
+    color: rgb(252, 251, 249);
+    border-bottom-color: rgb(252, 251, 249);
+}
+
+
+/* CSS с использованием Flexbox */
+.flex-nav {
+    display: flex;
+    justify-content: center; /* Центрируем меню */
+    gap: 30px; /* Отступы между пунктами */
+    list-style: none;
+    padding: 0;
+}
+
+.flex-nav a {
+    display: block;
+    padding: 5px 0;
+    transition: all 0.3s ease;
+}
+
+.flex-nav a:hover {
+    transform: translateY(-3px);
+}
+
+
+/* стили для активной ссылки*/
+.active {
+    border-bottom-color: rgb(252, 251, 249);
+}
+
+main {
+    background-color: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+
+section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+}
+
+/* Общие стили для всех карточек */
+.article {
+    display: flex;
+    background: white;
+    border: 1px solid #efeded;
+    padding: 20px;
+    flex: 1 1 300px;
+    min-width: 280px;
+    max-width: 460px;
+    height: 595px;
+    flex-direction: column;
+    border-radius: 10px;
+    overflow: auto;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+}
+
+.card1 {
+    flex:1
+}
+
+.card2 {
+    flex: 2;
+}
+
+form {
+    flex: 2;
+}
+
+/* Карточка информации */
+
+.card1 h2 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    font-weight: bold;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #eee;
+}
+.email {
+    color:#bb9823;
+}
+
+.card1 p {
+    line-height: 1.5;
+    margin-bottom: 10px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.card1 p:nth-of-type(2)::before { 
+    content: "✉️ ";
+    color: #2e7d5e;
+}
+
+.card1 p:last-of-type::before { 
+    content: "📍 ";
+    color: #8b5a4b;
+}
+
+p a {
+    text-decoration: none;
+    color: #508cc8;
+}
+
+p a:focus {
+    color: #e07684;
+}
+
+.forma h2 {
+    font-size: 22px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #eee;
+}
+
+.forma h3 {
+    font-size: 1rem;
+    margin: 10px 0 5px 0;
+    font-weight: normal;
+
+    position: relative;
+    display: inline-block;
+    margin: 15px 0 5px 0;
+}
+
+.forma h3::after {
+    content: "*";
+    color: #b34b4b;
+    margin-left: 5px;
+    font-weight: bold;
+}
+
+/* Стили для полей ввода */
+.form_data {
+    width: 100%;
+    padding: 8px;
+    font-size: 1rem;
+    background: white;
+    border-radius: 12px;
+    border: 1px solid #61704b;
+}
+
+.form_data::placeholder {
+    color: #a4b299;
+    opacity: 0.8;
+    font-size: 14px;
+}
+
+.form_data:required {
+    background: #fffcfc;
+}
+
+.form_data:required:focus {
+    border-color: #c9884b;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(179, 75, 75, 0.1);
+}
+
+/* Блок с согласием и кнопкой */
+.consent {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 15px;
+}
+
+.consent::after {
+    content: "*";
+    color: #b34b4b;
+    margin-left: 1px;
+    font-weight: bold;
+}
+
+.checkbox {
+    width: 20px;
+    height: 20px;
+}
+
+.checkbox:checked {
+    accent-color: #ace0b9;
+}
+
+.send {
+    color: #ffffff;
+    background: #7a8c5e;
+    border: none;
+    padding: 14px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 30px;
+    border-radius: 11px;
+    transition: all 0.3s;
+}
+
+.send:hover {
+    color: #ffffff;
+    background: #61704b;
+}
+
+.card h4 {
+    font-weight: bold;
+}
+.card2 p {
+    line-height: 1.5;
+    margin-bottom: 15px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.card2 ol {
+    margin-bottom: 15px;
+    line-height: 1.5;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    padding-left: 2px;
+    list-style: none;
+}
+
+/* Вопросы - жирный шрифт */
+.card2 li:nth-child(odd) {
+    font-weight: bold;
+    color: #583620;
+    margin-top: 15px;
+}
+
+/* Ответы - обычный шрифт */
+.card2 li:nth-child(even) {
+    font-weight: normal;
+    margin-left: 15px;
+    margin-bottom: 15px;
+}
+
+.card2 li:nth-child(even)::before {
+    content: "✓ ";
+    color: #2e7d5e;
+    margin-right: 5px;
+}
+
+p {
+    margin-bottom: 15px;
+}
+
+footer {
+    background-color: #6b443b;
+    color: rgb(210, 194, 171);
+    text-align: center;
+    padding: 20px;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+@media (max-width: 768px) {
+    .controls-panel {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 500px) {
+    .flex-nav {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+@media (max-width: 470px) {
+    .card2 {
+        height: 650px;
+        overflow: hidden;
+    }
+
+    .forma {
+        height: 690px;
+    }
+
+    .checkbox {
+        overflow-wrap: normal;
+    }
+}
