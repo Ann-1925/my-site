@@ -337,12 +337,12 @@ footer {
 
 @media (max-width: 470px) {
     .card1 {
-        height: 670px;
+        height: 700px;
         overflow: hidden;
     }
 
     .card2 {
-        height: 670px;
+        height: 690px;
         overflow: hidden;
     }
 
