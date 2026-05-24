@@ -336,6 +336,10 @@ footer {
 }
 
 @media (max-width: 470px) {
+    .card1 {
+        overflow: hidden;
+    }
+    
     .card2 {
         height: 650px;
         overflow: hidden;
@@ -343,6 +347,7 @@ footer {
 
     .forma {
         height: 690px;
+        overflow: hidden;
     }
 
     .checkbox {
